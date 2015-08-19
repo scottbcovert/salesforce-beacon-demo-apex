@@ -1,0 +1,37 @@
+#Ignore .DS_Store Files
+.DS_Store
+
+#Ignore mm.log File
+mm.log
+
+#Ignore Sublime Project Files
+*.sublime*
+
+#Ignore Config Files
+config/*
+
+#Ignore MavensMate Files
+apex-scripts/*
+
+#Ignore package.xml
+package.xml
+
+#Ignore Eclipse Project Files
+salesforce.schema
+Referenced\ Packages/*
+.project
+.settings/*
+
+#Ignore MS Word Documentation
+*.docx
+
+#Ignore SfApexDox Files
+build.xml
+docAuthor.txt
+docHome.txt
+SfApexDocLog.txt
+
+#Ignore Build Files
+node_modules
+.tmp
+dist

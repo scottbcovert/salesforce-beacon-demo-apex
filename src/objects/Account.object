@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Distance_to_San_Diego_Zoo__c</fullName>
+        <externalId>false</externalId>
+        <formula>DISTANCE(BillingAddress, GEOLOCATION($Setup.San_Diego_Zoo__c.Latitude__c, $Setup.San_Diego_Zoo__c.Longitude__c), &apos;mi&apos; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Distance to San Diego Zoo</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

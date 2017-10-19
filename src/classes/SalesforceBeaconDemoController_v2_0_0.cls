@@ -18,7 +18,7 @@ global with sharing class SalesforceBeaconDemoController_v2_0_0 {
         			// Insert mobile activity & beacon info if necessary
 	        		Beacon__c matchingBeacon = new Beacon__c(Identifier__c = beaconIdentifier, Uuid__c = beaconUuid, Major__c = beaconMajor, Minor__c = beaconMinor);
 	        		Mobile_Activity__c newMobileActivity = new Mobile_Activity__c(ContactId__c = contactId, Beacon__r = new Beacon__c(Identifier__c = beaconIdentifier), Activity_Type__c = (type == 'entered') ? 'Entered Region' : 'Exited Region');
-	        		upsert matchingBeacon;
+	        		upsert matchingBeacon Identifier__c;
 	        		insert newMobileActivity;
         		}
         		return opp[0];

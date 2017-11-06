@@ -13,6 +13,11 @@ config/*
 #Ignore MavensMate Files
 apex-scripts/*
 
+#Ignore IlluminatedCloud Files
+.idea/
+IlluminatedCloud/
+*.iml
+
 #Ignore package.xml
 package.xml
 

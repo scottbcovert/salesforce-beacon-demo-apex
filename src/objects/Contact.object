@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>MobileCheckIns__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of mobile check-ins</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of mobile check-ins</inlineHelpText>
+        <label>Mobile Check-Ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerTier__c</fullName>
+        <description>The tier of this customer based on number of mobile check-ins</description>
+        <externalId>false</externalId>
+        <formula>if ( MobileCheckIns__c &gt;= 25, &apos;Platinum&apos;,
+            if ( MobileCheckIns__c &gt;= 10, &apos;Gold&apos;,
+            if ( MobileCheckIns__c &gt;= 5, &apos;Silver&apos;,
+            if ( MobileCheckIns__c &gt;= 1, &apos;Bronze&apos;,
+            &apos;None&apos;
+            ))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FlashSaleDiscount__c</fullName>
+        <description>The flash sale discount offered to this customer based on their tier</description>
+        <externalId>false</externalId>
+        <formula>if ( CustomerTier__c = &apos;Platinum&apos;, 0.20,
+            if ( CustomerTier__c = &apos;Gold&apos;, 0.15,
+            if ( CustomerTier__c = &apos;Silver&apos;, 0.10,
+            if ( CustomerTier__c = &apos;Bronze&apos;, 0.05,
+            0
+            ))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Flash Sale Discount</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

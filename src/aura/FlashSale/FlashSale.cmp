@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="FlashSaleController" description="Flash Sale Quick Action">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" description="Initializes a Flash Sale"/>
+    <lightning:spinner variant="brand" />
+</aura:component>

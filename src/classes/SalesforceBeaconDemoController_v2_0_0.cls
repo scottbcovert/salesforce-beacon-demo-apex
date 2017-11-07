@@ -20,6 +20,8 @@ global with sharing class SalesforceBeaconDemoController_v2_0_0 {
 	        		Mobile_Activity__c newMobileActivity = new Mobile_Activity__c(ContactId__c = contactId, Beacon__r = new Beacon__c(Identifier__c = beaconIdentifier), Activity_Type__c = (type == 'entered') ? 'Entered Region' : 'Exited Region');
 	        		upsert matchingBeacon Identifier__c;
 	        		insert newMobileActivity;
+					// Send push notification to mobile app user
+					OneSignalService.sendPushNotification(opp[0].Name,opp[0].Description);
         		}
         		return opp[0];
         	}
